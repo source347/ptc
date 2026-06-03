@@ -20,28 +20,35 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     :root {
       color-scheme: dark;
     }
     body {
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #1d2846 0%, #0f172a 40%, #020617 100%);
+      background-color: #0c0e12;
       color: #e2e8f0;
     }
-    .glass {
-      backdrop-filter: blur(12px);
-      background: rgba(15, 23, 42, 0.75);
-      border: 1px solid rgba(148, 163, 184, 0.2);
+    /* Custom thin scrollbar for data-dense layouts */
+    ::-webkit-scrollbar {
+      width: 6px;
     }
-    .link-card {
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-      min-height: 5rem;
+    ::-webkit-scrollbar-track {
+      background: #11141a;
     }
-    .link-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(56, 189, 248, .8);
-      box-shadow: 0 12px 28px rgba(14, 165, 233, .2);
+    ::-webkit-scrollbar-thumb {
+      background: #2a313d;
+      border-radius: 3px;
+    }
+    .compact-card {
+      transition: all 0.15s ease-in-out;
+      border: 1px solid #1e2530;
+      background-color: #11151d;
+    }
+    .compact-card:hover {
+      background-color: #161b26;
+      border-color: #d97706; /* Subtle Amber Accent */
+      transform: translateY(-1px);
     }
   </style>
   <script type="application/ld+json">
@@ -55,68 +62,24 @@
     }
   </script>
 </head>
-<body>
-  <main class="max-w-6xl mx-auto p-4 sm:p-6 md:p-8">
-    <header class="glass rounded-3xl p-6 sm:p-8 text-center shadow-2xl shadow-cyan-900/20 mb-8">
-      <p class="text-cyan-300 font-semibold tracking-wide">🚀 Updated for 2026 SEO + conversion</p>
-      <h1 class="text-4xl sm:text-5xl font-extrabold mt-2 bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text text-transparent">
-        Crypto Earning Hub
-      </h1>
-      <p class="text-slate-300 text-sm sm:text-base max-w-3xl mx-auto mt-3">
-        Discover trusted platforms for trading, faucets, and online tasks in one clean dashboard. Pick a category and start earning smarter. 💸
-      </p>
-      <div class="flex flex-wrap items-center justify-center gap-3 mt-5">
-        <a href="#exchanges" class="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold">Start with Exchanges ⚡</a>
-        <a href="#faucets" class="px-4 py-2 rounded-xl bg-violet-500 hover:bg-violet-400 text-white font-bold">Explore Faucets 🪙</a>
+<body class="antialiased min-h-screen flex flex-col justify-between selection:bg-amber-500/30">
+
+  <main class="w-full max-w-5xl mx-auto px-3 py-4 sm:p-6 space-y-5">
+    
+    <header class="border border-[#1e2530] bg-[#11151d] rounded-xl p-4 sm:p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4 shadow-sm">
+      <div class="space-y-1">
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20 uppercase tracking-wider">v2.0 Active</span>
+          <p class="text-xs text-slate-400 font-medium">SEO Optimized &amp; Streamlined</p>
+        </div>
+        <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-stone-100">
+          Crypto Earning Hub
+        </h1>
+        <p class="text-xs text-slate-400 max-w-xl">
+          Curated directory of highly trusted trading platforms, high-yield faucets, and passive task sites optimized for raw performance and faster onboarding.
+        </p>
       </div>
-    </header>
-
-    <section id="exchanges" class="mb-8">
-      <h2 class="text-2xl font-bold mb-4 border-b border-violet-700 pb-2">🏦 Exchanges & Wallets</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        <a href="https://accounts.binance.com/register?ref=49685937" target="_blank" rel="noopener noreferrer" class="link-card glass rounded-2xl p-4">
-          <p class="font-bold">Binance</p><p class="text-sm text-slate-300">Global exchange & deep liquidity 🌍</p>
-        </a>
-        <a href="https://www.mexc.com/auth/signup?inviteCode=2pLgC" target="_blank" rel="noopener noreferrer" class="link-card glass rounded-2xl p-4">
-          <p class="font-bold">MEXC</p><p class="text-sm text-slate-300">Altcoin discovery & spot trading 📈</p>
-        </a>
-        <a href="https://faucetpay.io/?r=95880" target="_blank" rel="noopener noreferrer" class="link-card glass rounded-2xl p-4">
-          <p class="font-bold">FaucetPay</p><p class="text-sm text-slate-300">Micro-wallet for small payouts 👛</p>
-        </a>
-      </div>
-    </section>
-
-    <section id="faucets" class="mb-8">
-      <h2 class="text-2xl font-bold mb-4 border-b border-emerald-700 pb-2">💧 Faucets & Rewards</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        <a href="https://cointiply.com/r/mOnqp" target="_blank" rel="noopener noreferrer" class="link-card glass rounded-2xl p-4"><p class="font-bold">Cointiply</p><p class="text-sm text-slate-300">Multi-coin faucet tasks 🧩</p></a>
-        <a href="https://www.coinpayu.com/?r=dashboard" target="_blank" rel="noopener noreferrer" class="link-card glass rounded-2xl p-4"><p class="font-bold">CoinPayU</p><p class="text-sm text-slate-300">PTC + faucet combo 🔄</p></a>
-        <a href="https://autofaucet.dutchycorp.space/?r=Autofaucets" target="_blank" rel="noopener noreferrer" class="link-card glass rounded-2xl p-4"><p class="font-bold">DutchyCorp Space</p><p class="text-sm text-slate-300">Auto faucet workflow 🤖</p></a>
-        <a href="https://firefaucet.win/ref/126786" target="_blank" rel="noopener noreferrer" class="link-card glass rounded-2xl p-4"><p class="font-bold">Fire Faucet</p><p class="text-sm text-slate-300">Manual + auto claim modes 🔥</p></a>
-        <a href="https://r.adbtc.top/1169353" target="_blank" rel="noopener noreferrer" class="link-card glass rounded-2xl p-4"><p class="font-bold">AdBTC</p><p class="text-sm text-slate-300">BTC ad-view earnings 👀</p></a>
-        <a href="https://viefaucet.com?r=6380ee9189dc9d60cddeaf22" target="_blank" rel="noopener noreferrer" class="link-card glass rounded-2xl p-4"><p class="font-bold">Viefaucet</p><p class="text-sm text-slate-300">Simple faucet loop 🧪</p></a>
-        <a href="https://rollercoin.com/?r=kcq1472k" target="_blank" rel="noopener noreferrer" class="link-card glass rounded-2xl p-4"><p class="font-bold">RollerCoin</p><p class="text-sm text-slate-300">Mining sim with gamified tasks 🎮</p></a>
-        <a href="https://earnbitmoon.club/?ref=265500" target="_blank" rel="noopener noreferrer" class="link-card glass rounded-2xl p-4"><p class="font-bold">EarnBitMoon Club</p><p class="text-sm text-slate-300">Micro earning opportunities 🌙</p></a>
-        <a href="https://simplebits.io/ref/0rd4li1cSLTL" target="_blank" rel="noopener noreferrer" class="link-card glass rounded-2xl p-4"><p class="font-bold">SimpleBits</p><p class="text-sm text-slate-300">Straightforward crypto tasks ✅</p></a>
-      </div>
-    </section>
-
-    <section id="tasks" class="mb-10">
-      <h2 class="text-2xl font-bold mb-4 border-b border-amber-700 pb-2">🧠 Passive income</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        <a href="https://pawns.app/?r=1112465" target="_blank" rel="noopener noreferrer" class="link-card glass rounded-2xl p-4"><p class="font-bold">Pawns.app</p><p class="text-sm text-slate-300">Monetize bandwidth + complete tasks 📶</p></a>
-      </div>
-    </section>
-
-    <section class="glass rounded-2xl p-6 text-center">
-      <h2 class="text-2xl font-extrabold">Ready to start? 💥</h2>
-      <p class="text-slate-300 mt-2">Pick 1 exchange + 1 faucet + 1 task site for the best beginner conversion flow.</p>
-      <a href="#exchanges" class="inline-block mt-4 px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold">Launch Your Earning Stack</a>
-    </section>
-
-    <footer class="mt-10 text-center text-xs text-slate-400">
-      © 2026 Crypto Earning Hub · Mobile-first UI · Fast navigation · SEO optimized.
-    </footer>
-  </main>
-</body>
-</html>
+      
+      <div class="flex flex-wrap items-center gap-1.5 sm:self-center md:self-end">
+        <a href="#exchanges" class="px-2.5 py-1.5 text-xs font-semibold rounded bg-[#1e2530] hover:bg-[#252f3e] border border-transparent text-stone-200 transition-colors">Exchanges</a>
+        <a href="#faucets" class="px-2.5 py-1.5 text-xs font-semibold rounded bg-[#1e2530] hover:bg-[#252f3e] border border
